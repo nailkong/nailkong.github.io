@@ -67,179 +67,42 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/13/搭建Hexo博客并部署到Github/" title="搭建Hexo博客并部署到Github" itemprop="url">搭建Hexo博客并部署到Github</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Nail" target="_blank" itemprop="author">Nail</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-13T14:44:37.000Z" itemprop="datePublished"> 发表于 2016-06-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="内容提要"><a href="#内容提要" class="headerlink" title="内容提要"></a>内容提要</h1><pre><code>本文详细介绍如何使用Hexo搭建博客并部署到github。文章参考了网上的文章，写下此文作为一个知识备份。
-Hexo是一个快速简洁的博客框架。它使用node.js来进行页面渲染，并且支持当下最流向的Markdown标记语言。
-GitHub是一个分布式版本控制系统，具体概念网上看下教程啦~~。
-</code></pre><h1 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h1><ul>
-<li>Windows操作系统。</li>
-<li>git。 点击<a href="https://git-scm.com/download" target="_blank" rel="external">官网</a>下载最新版本即可，如果官网无法下载你可以从以下的百度云盘下载 <a href="http://pan.baidu.com/s/1dFjszlv" target="_blank" rel="external">百度云下载</a>。</li>
-<li>Node.js。点击<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js官网</a>下载最新版本即可，如果官网无法下载可以从以下的百度云盘下载 <a href="http://pan.baidu.com/s/1ge4CLKB" target="_blank" rel="external">百度云下载</a><h1 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h1>  工具安装完成后，在任意位置点击鼠标右键，选择Git Bash Here,在弹出的窗口中输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="创建Hexo文件夹"><a href="#创建Hexo文件夹" class="headerlink" title="创建Hexo文件夹"></a>创建Hexo文件夹</h1><pre><code>安装完成后，在任意目录创建文件夹Hexo(如F:\Hexo),在此文件夹内点击鼠标右键选择Git Base Here,输入以下命令进行初始化。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>初始化完成后，Hexo文件夹下会建立苏需要的所有文件。</p>
-<h1 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h1><pre><code>初始化完后，继续执行以下命令安装Hexo依赖包。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h1 id="启动测试"><a href="#启动测试" class="headerlink" title="启动测试"></a>启动测试</h1><pre><code>经过以上步骤，我们已经成功的搭建了本地Hexo博客，在Hexo文件夹下（F:\Hexo）中点击鼠标右键选择Git Base Here,依次输入以下命令。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>启动成功后，我们可以在浏览器中输入<a href="http://localhost:4000来进行访问测试。" target="_blank" rel="external">http://localhost:4000来进行访问测试。</a></p>
-<h1 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h1><p>登录<a href="https://github.com/" target="_blank" rel="external">Github官网</a>进行注册。输入账户名，邮箱注册下，邮箱需要验证。</p>
-<h1 id="登录创建repository"><a href="#登录创建repository" class="headerlink" title="登录创建repository"></a>登录创建repository</h1><pre><code>登录github,点击New repository进行创建，注意名字必须使用与github账号相同名称，如github名称为：nailkong,创建的repository名称应该为nailkong.github.io。
-</code></pre><h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><ol>
-<li>在刚创建的repository中找到https地址（在Clone or download或者Settings中可以找到）。</li>
-<li>复制上一步的https地址，然后在你的Hexo文件中（本例使用F:\Hexo）中找到配置文件_config.yml并编辑。</li>
-<li>修改_config.yml中的deploy，其中type设置为git,repository设置为上一步复制的地址，branch设置为master。注意：号都有一个空格，此规则使用于所有的_config.yml配置文件修改。<h1 id="设置SSH"><a href="#设置SSH" class="headerlink" title="设置SSH"></a>设置SSH</h1></li>
-<li>在任意位置鼠标右键选择Git Bash here,输入以下命令，检查SSH是否存在。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
-<ol>
-<li>如果存在需要重新配置的话，请先删除位于<strong>C:\Users\你自己的机器用户\.ssh</strong>,下的所有文件后继续步骤。</li>
-<li>输入一下指令后，回车（邮箱就是你注册github时的邮箱地址）。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C&quot;###@mail.com&quot;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>输入成功过后，会提示你输入passphrase。输入一个你好记的字符串。</li>
-<li>继续输入以下指令</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent -s</span><br></pre></td></tr></table></figure>
-<ol>
-<li>继续输入以下指令</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<p>在我实际操作过程中，在此处提示错误“Could not open a connection to your authentication agent”，如果也提示了此错误的话，请先输入以下指令，在执行第6步。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br></pre></td></tr></table></figure>
-<ol>
-<li>以上步骤执行完成后，就可以添加SSH Key到你的github账户了。输入以下指令拷贝Key</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<ol>
-<li>登录github里面点击右上角的设置图标，进入Setting后点击左侧菜单的SSH and GPG keys,点击Add SSH Key,输入一个tittle,将上一步复制的key直接粘贴保存就可以了。</li>
-<li>经过以上步骤SSH已经配置完成，可以输入一下指令测试SSH，其中passphrase为第4步中你输入的字符串。看到提示You’ve successfully authenticated就证明你已经连接成功了。<h1 id="部署博客到github"><a href="#部署博客到github" class="headerlink" title="部署博客到github"></a>部署博客到github</h1>在你的hexo文件夹下，鼠标右键git bash here,依次输入以下指令</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>在弹出的界面依次输入你的github用户名，github密码。部署成功后，你可以在浏览器中输入<a href="http://nailkong.github.io" target="_blank" rel="external">http://nailkong.github.io</a>来查看你的博客了,注意将nailkong修改为你自己的github用户名。<br><img src="../../../../images/2_1.jpg" alt="image"><br><img src="../../../../images/2_2.jpg" alt="image"></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>每次修改本地文件后，需要上传github时，都需要进入定义的Hexo文件夹执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>下一遍博客将写1、github主页绑定域名的操作。<br>2、Hexo主题的更换及主要Hexo的主要操作。</p>
-</blockquote>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/Hexo/">Hexo</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/06/13/搭建Hexo博客并部署到Github/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/06/13/搭建Hexo博客并部署到Github/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/06/13/搭建Hexo博客并部署到Github/" title="搭建Hexo博客并部署到Github" itemprop="url">
+  
+    <h1 itemprop="name">搭建Hexo博客并部署到Github</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >内容提要本文详细介绍如何使用Hexo搭建博客并部署到github。文章参考了网上的文章，写下此文作为一个知识备份。
+Hexo是一个快速简洁的博客框架。它使用node.js来进行页面渲染，并且支持当下最流向的Markdown标记语言。
+GitHub是一个分布式版本控制系统，具体概念</p>
+        
     
-      <a href="/2016/06/08/hello-world/" title="Hello World" itemprop="url">Hello World</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Nail" target="_blank" itemprop="author">Nail</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-08T03:16:20.123Z" itemprop="datePublished"> 发表于 2016-06-08</time>
+    <time datetime="2016-06-13T14:44:37.000Z" itemprop="datePublished">2016-06-13</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/06/08/hello-world/" title="Hello World" itemprop="url">
+  
+    <h1 itemprop="name">Hello World</h1>
     
-  </p>
-</header>
-    <div class="article-content">
+     
+           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
         
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/06/08/hello-world/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/06/08/hello-world/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
+    
+    <time datetime="2016-06-08T03:16:20.123Z" itemprop="datePublished">2016-06-08</time>
+  </a>
+</section>
 
 
 
